@@ -47,7 +47,8 @@ export class CountrySearchComponent implements OnInit{
   
   //filter autocomplete options when typing
   ngOnInit():void {
-    this.filteredCountries = this.inputFormControl.valueChanges.pipe(startWith(''),map(value => {
+    this.filteredCountries = this.inputFormControl.valueChanges.pipe(startWith(''),map(inputValue => {
+      const value = inputValue?.trim();
       return this.countries.filter(country => country.toLowerCase().includes(value?.toLowerCase()!));
     }),);
   }
