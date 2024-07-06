@@ -3,6 +3,8 @@
         <mat-label>Find Country</mat-label>
         <input matInput id="userSearch" type="text" [formControl]="inputFormControl" [errorStateMatcher]="matcher"
             [matAutocomplete]="auto" required>
+        @if(inputFormControl.hasError('empty')){<mat-error>Please enter a country.</mat-error>}
+        @if(inputFormControl.hasError('notFound')){<mat-error>Sorry, cannot locate country. </mat-error>}
         <mat-autocomplete #auto="matAutocomplete" aria-label="input autocomplete list" (optionSelected)="setCountry()">
             @if(inputFormControl.hasError('empty')){<mat-error>Please enter a country.</mat-error>}
             @if(inputFormControl.hasError('notFound')){<mat-error>Sorry, cannot locate country. </mat-error>}
