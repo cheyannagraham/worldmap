@@ -20,7 +20,7 @@ export class SvgMapComponent {
       const code = this.CountryService.getSelectedCountry().code;
       if(code){
         const el = document.querySelector(`#${code}`) as SVGPathElement;
-        this.toggleMapClass(el);
+        this.toggleSelectedClass(el);
         this.updateUseEl(el);
       }
     });
@@ -31,6 +31,7 @@ export class SvgMapComponent {
     this.emitMapClick.emit(event.target as SVGPathElement);
   }
   
+  // Create circle around selected path of "small" countries
   updateUseEl(el:SVGPathElement){
     let width = el?.getBoundingClientRect().width;
     let height = el?.getBoundingClientRect().height;
@@ -43,7 +44,7 @@ export class SvgMapComponent {
       }
   }
 
-  toggleMapClass(element:SVGPathElement) {
+  toggleSelectedClass(element:SVGPathElement) {
     const selected = document.querySelector('.selected');
     selected?.classList.remove('selected');
     element?.classList.add('selected');

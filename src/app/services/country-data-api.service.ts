@@ -16,6 +16,7 @@ export class CountryDataAPIService {
     return this.http.get<any>(`https://api.worldbank.org/v2/country/${countryCode}?format=json`);
   }
 
+  // Make separate API requests and return combined results
   getCountryAPIData(countryCode:string) {
     return this.getGeoData(countryCode).pipe(mergeMap(geoData => this.getWDData(countryCode).pipe(map(wdData => {
       return {...(geoData.geonames ? geoData.geonames[0] : {}), ...(wdData[1] ? wdData[1][0] : {})};

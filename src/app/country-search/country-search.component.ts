@@ -12,7 +12,7 @@ import { map, startWith } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 
 
-//Class to detect custom erros
+//Class to define and detect custom form errors. 
 class CustomErrorStateMatcher implements ErrorStateMatcher {
   customComponentValidation;
   
