@@ -1,0 +1,19 @@
+header {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: auto;
+}
+
+h1 {
+    padding: 10px 5px;
+    margin: 10px 5px; 
+}
+
+@media screen and (max-width: 800px) {
+    header {
+        display:flex;
+        flex-wrap:wrap
+    }
+}

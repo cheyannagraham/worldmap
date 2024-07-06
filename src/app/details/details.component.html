@@ -1,0 +1,50 @@
+<div id="details-list">
+
+    @if(selectedCountry.name){
+    <h2>{{selectedCountry.name}}</h2>
+    <mat-list role="list">
+        @if(selectedCountry.capital){
+        <mat-list-item role="list-item">
+            <span class="list-title">
+                Capital
+            </span>
+            {{selectedCountry.capital}}
+        </mat-list-item>}
+        @if(selectedCountry.language){
+        <mat-list-item role="list-item">
+            <span class="list-title">
+                Language
+            </span>
+            {{selectedCountry.language}}
+        </mat-list-item>}
+        @if(selectedCountry.region){
+        <mat-list-item role="list-item">
+            <span class="list-title">
+                Region
+            </span>
+            {{selectedCountry.region}}
+        </mat-list-item>}
+        @if(selectedCountry.population){
+        <mat-list-item role="list-item">
+            <span class="list-title">
+                Population
+            </span>
+            {{selectedCountry.population}}
+        </mat-list-item>}
+        @if(selectedCountry.currency){
+        <mat-list-item role="list-item">
+            <span class="list-title">
+                Currency
+            </span>
+            {{selectedCountry.currency}}
+        </mat-list-item>}
+        @if(selectedCountry.incomeLevel){
+        <mat-list-item role="list-item">
+            <span class="list-title">
+                Income Level
+            </span>
+            {{selectedCountry.incomeLevel}}
+        </mat-list-item>}
+    </mat-list>
+    }
+</div>

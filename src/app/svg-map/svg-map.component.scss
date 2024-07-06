@@ -1,0 +1,14 @@
+path:hover {
+    fill:rgb(192, 192, 62);
+    cursor: pointer;
+}
+
+path.selected {
+    fill: orangered;
+}
+
+path.selected.highlight {
+    outline: 3px solid orangered;
+    outline-offset: 20px;
+    border-radius: 50%;
+}

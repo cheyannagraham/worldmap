@@ -1,0 +1,17 @@
+<form (ngSubmit)="setCountry()">
+    <mat-form-field appearance="outline">
+        <mat-label>Find Country</mat-label>
+        <input matInput id="userSearch" type="text" [formControl]="inputFormControl" [errorStateMatcher]="matcher"
+            [matAutocomplete]="auto" required>
+        <mat-autocomplete #auto="matAutocomplete" aria-label="input autocomplete list" (optionSelected)="setCountry()">
+            @if(inputFormControl.hasError('empty')){<mat-error>Please enter a country.</mat-error>}
+            @if(inputFormControl.hasError('notFound')){<mat-error>Sorry, cannot locate country. </mat-error>}
+            @for (country of filteredCountries | async; track country) {
+            <mat-option [value]="country">{{country.toUpperCase()}}</mat-option>
+            }
+        </mat-autocomplete>
+        <button mat-button matSuffix type="submit">
+            <mat-icon aria-hidden="false" aria-label="search icon" fontIcon="search"></mat-icon>
+        </button>
+    </mat-form-field>
+</form>

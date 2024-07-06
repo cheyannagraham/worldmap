@@ -1,0 +1,15 @@
+#map-component {
+    display:flex;
+    width: 100%;
+}
+#svgmap-container {
+    padding: 20px 0;
+    width: 100%;
+    position: relative;
+}
+
+@media screen and (max-width: 800px) {
+    #map-component {
+        display:block;
+    }
+}
